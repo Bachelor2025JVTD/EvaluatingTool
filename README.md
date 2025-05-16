@@ -78,7 +78,7 @@ All settings to be changed are set in config.json file.
 -Set "BLB1_ADDR" and "BLB2_ADDR" to the IP-adresses of the configured lightbulbs.
 
 #### Database
-Link to the database structure: [Database structure.sql](Utilities\Database\DatabaseStructure.sql)
+Link to the database structure: [Database structure.sql]([Utilities\Database\DatabaseStructure.sql](https://github.com/Bachelor2025JVTD/EvaluatingTool/blob/main/Utilities/Database/DatabaseStructure.sql))
 
 # EvaluatingTool
 >>>>>>> 11093af427be84f34976778670b9fe5b76322ca9
