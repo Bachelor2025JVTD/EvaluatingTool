@@ -69,10 +69,10 @@ The given folderstructure must be implemented with correct syntax to be able to 
 All settings to be changed are set in config.json file.
 
 - Set "STR_BSE_PATH" to the folder "Images".
-- Set "IND_CMR_ADDR" to the IP-adress to Pepperl + Fuchs VOS2000-F226R-8MM-S.
+- Set "IND_CMR_ADDR" to the IP-adress to Pepperl+Fuchs VOS2000-F226R-8MM-S.
 - Set "CAP_INDX" to the cap index of Logitech Carl Zeiss HD c930e 1080p.
-- Set "BASE_PATH_FTP" to an free of choice folder at you machine who are not    beeng used by another system.
--Set "BLB1_ADDR" and "BLB2_ADDR" to the IP-adresses of the configured lightbulbs.
+- Set "BASE_PATH_FTP" to a free of choice folder at you machine who are not beeng used by another system.
+- Set "BLB1_ADDR" and "BLB2_ADDR" to the IP-adresses of the configured lightbulbs.
 
 #### Database
 Link to the database structure: [Database structure.sql]([Utilities\Database\DatabaseStructure.sql](https://github.com/Bachelor2025JVTD/EvaluatingTool/blob/main/Utilities/Database/DatabaseStructure.sql))
