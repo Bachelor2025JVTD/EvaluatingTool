@@ -46,7 +46,7 @@ Connect to the local web-API to configure the lightbulbs.
 - Set IP-address.
 - Connect to the lightbulbs in your LAN.
 
-![DUO smart Wi-Fi LED light confiuration.png](Utilities\Images\ShellyDueConfiguration.png)
+![DUO smart Wi-Fi LED light confiuration.png](.\Utilities\Images\ShellyDueConfiguration.png)
 
 
 
