@@ -41,8 +41,7 @@ The hardware devices used:
 #### Shelly DUO smart Wi-Fi LED-Light
 Connect to the local web-API to configure the lightbulbs.
 
-- Set IP-address.
-- Connect to the lightbulbs in your LAN.
+- Set lightbulb IP-address through GUI available at 192.168.33.1.
 
 ![DUO smart Wi-Fi LED light confiuration.png](https://github.com/Bachelor2025JVTD/EvaluatingTool/blob/main/Utilities/Images/ShellyDueConfiguration.png)
 
@@ -51,7 +50,7 @@ Connect to the local web-API to configure the lightbulbs.
 
 ### Software configuration
 #### Folderstructure
-The give folderstructure must be implemented with correct syntax to be able to save the images.
+The given folderstructure must be implemented with correct syntax to be able to save the images.
 
 ```bash
 
