@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-
 # IMAGE EVALUATING TOOL
 
-The Python script is used to evaluate the readability of a datamatrix in an image.
+The Python script is used to evaluate the readability of a 2d-barcode in an image.
 
 
 
