@@ -78,6 +78,6 @@ All settings to be changed are set in config.json file.
 
 #### Database
 Link to the database structure: [Database structure.sql](Utilities\Database\DatabaseStructure.sql)
-=======
+
 # EvaluatingTool
 >>>>>>> 11093af427be84f34976778670b9fe5b76322ca9
