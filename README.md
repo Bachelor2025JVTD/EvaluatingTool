@@ -32,7 +32,7 @@ The hardware devices used:
 
 ### Hardware configuration
 #### Pepperl + Fuchs VOS2000-F226R-8MM-S
-For detailed information about the camera configuration and jobs see [camera folder]()
+For detailed information about the camera configuration and jobs see [camera folder](https://github.com/Bachelor2025JVTD/EvaluatingTool/tree/main/Utilities/P%2BF%20Camera)
 - Set IP-address.
 - Create "solutions" and save to camera.
 - Create script to save images to the FTP-server.
