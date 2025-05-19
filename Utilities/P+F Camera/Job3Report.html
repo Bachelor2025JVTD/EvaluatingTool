@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iNspect Report</title>
+<STYLE TYPE="text/css">
+<!--
+.indented
+{
+padding-left: 50pt;
+padding-right: 50pt;
+}
+-->
+</STYLE>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+
+<center>
+<br>
+<font color="#800080">
+<h1> Report for Solution   ID:3     Test
+</h1>
+<br>
+</font>
+<font color="#007000">
+ Version: 2267
+<br>
+<br>Report Date: 5/19/2025  9:09:25
+<br>Number of cameras: 1
+</center>
+</font><div class="indented">
+
+<br>
+<br>
+<br>
+<center><hr width="80%" size=8 color="#000080"> 
+
+<h2>
+<font color="#800080"> Report for Camera 1
+</h2>
+</center>
+</font><hr width="80%" size=8 color="#000080"> 
+
+<center>
+<br>
+<br>
+<br>
+<br><img src="TemplateImage55589_0.jpg">
+<br>
+<h3> Setup Image for Camera 1
+</h3>
+</center><hr width="100%" size=2 color="#000080"> 
+
+<h3>Acquisition Attributes
+</h3>Dimensions: Width=1280 , Height=960 <br>
+Trigger method: Software <br>
+Color:  Mono<br>
+Brightness: 15 <br>
+Contrast: 50 <br>
+Exposure: 7.5 milliseconds<br>
+<hr width="100%" size=2 color="#000080"> 
+
+<h3>Measurement Tools 
+</h3>
+<center>
+<table border="1">
+<tr>
+<td BGCOLOR="#c088ff"><b> Tool Name </b></td>
+<td BGCOLOR="#c088ff"><b> Tool Type </b></td>
+<td BGCOLOR="#ffff00"><b> Min Recycle </b></td>
+<td BGCOLOR="#c0dcc0"><b> Min Pass </b></td>
+<td BGCOLOR="#00ff00"><b> Perfect </b></td>
+<td BGCOLOR="#00a000"><b> Max Pass </b></td>
+<td BGCOLOR="#c0c000"><b> Max Recycle </b></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">B2d</td>
+<td BGCOLOR="#cccc99">Barcode2D</td>
+<td BGCOLOR="#cccc99">'</td>
+</tr>
+</table>
+<h4>Measurement Tolerances 
+</h4>
+</center>
+<br>
+<br>
+<br><hr width="80%" size=5 color="#000080"> 
+
+<center>
+<font color="#000080">
+<h3>Solution Functions
+</h3>
+</font>
+</center><hr width="80%" size=5 color="#000080"> 
+
+<br>
+<br><hr width="100%" size=2 color="#000080"> 
+
+<font color="#800080">
+<h4> Function:  Post Image Process
+</h4>
+</font>
+<font color="#007000"><pre><b>
+WriteFormatString( TCPP5025 ," [Result.0%d]\n\r" )
+x = x + 1
+fn = "ftp://169.254.121.69/img" + x + ".bmp"
+WriteImageFile(fn, 0)
+</pre></b>
+</font>
+<br>
+<br><hr width="100%" size=2 color="#000080"> 
+
+<font color="#800080">
+<h4> Function:  Solution Initialize
+</h4>
+</font>
+<font color="#007000"><pre><b>
+</pre></b>
+</font>
+<br>
+<br><hr width="100%" size=2 color="#000080"> 
+
+<font color="#800080">
+<h4> Function:  Pre Image Process
+</h4>
+</font>
+<font color="#007000"><pre><b>
+</pre></b>
+</font>
+<br>
+<br><hr width="100%" size=2 color="#000080"> 
+
+<font color="#800080">
+<h4> Function:  Periodic: 200 ms
+</h4>
+</font>
+<font color="#007000"><pre><b>
+Readbuffer = readstring(TcpP5024,13)
+if(Readbuffer!="") 
+    CommandString = ReadBuffer
+    Counter = Counter+1
+    CommandCharacter = substring(CommandString,0,1)
+    if(CommandCharacter = "T") 
+        trigger()
+    endif
+endif
+</pre></b>
+</font>
+<br>
+<br><hr width="100%" size=2 color="#000080"> 
+
+<font color="#800080">
+<h4> Function:  Periodic: 10 ms
+</h4>
+</font>
+<font color="#007000"><pre><b>
+Readbuffer = readstring(TcpP5024,13)
+if(Readbuffer!="") 
+    CommandString = ReadBuffer
+    Counter = Counter+1
+    CommandCharacter = substring(CommandString,0,1)
+    if(CommandCharacter = "T") 
+        trigger()
+    endif
+endif
+</pre></b>
+</font>
+<br>
+<br>
+<br><hr width="80%" size=5 color="#000080"> 
+
+<center>
+<font color="#000080">
+<h3>Solution Conditions
+</h3>
+</font><hr width="80%" size=5 color="#000080"> 
+
+<br>
+<table border="1">
+<tr>
+<td BGCOLOR="#c088ff"><b> Condition to check</b></td>
+<td BGCOLOR="#c088ff"><b> String to Send </b></td>
+<td BGCOLOR="#c088ff"><b> Destination</b></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">1</td>
+<td BGCOLOR="#cccc99">Uncnd App Output</td>
+<td BGCOLOR="#cccc99">Com port on COM3 Baud:38400</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">1</td>
+<td BGCOLOR="#cccc99">Uncnd App Output</td>
+<td BGCOLOR="#cccc99">Server on port 5020</td>
+</tr>
+</table>
+</center>
+<br>
+<br>
+<br><hr width="80%" size=5 color="#000080"> 
+
+<center>
+<font color="#000080">
+<h3>Solution Strings
+</h3>
+</font><hr width="80%" size=5 color="#000080"> 
+
+<br>
+<table border="1">
+<tr>
+<td BGCOLOR="#c088ff"><b> String Name</b></td>
+<td BGCOLOR="#c088ff"><b> Value </b></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Uncnd App Output</td>
+<td BGCOLOR="#cccc99">
+[Result%d]</td>
+</tr>
+</table>
+</center>
+<br>
+<br>
+<br><hr width="80%" size=5 color="#000080"> 
+
+<center>
+<font color="#000080">
+<h3>Solution Variables
+</h3>
+</font><hr width="80%" size=5 color="#000080"> 
+
+<br>
+<table border="1">
+<tr>
+<td BGCOLOR="#c088ff"><b> Variable Name </b></td>
+<td BGCOLOR="#c088ff"><b> Value </b></td>
+<td BGCOLOR="#c088ff"><b> Attached to IO / PLC </b></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">TcpP5024</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to Server on port 5024</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.RunMode</td>
+<td BGCOLOR="#cccc99">0</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.FrameCount</td>
+<td BGCOLOR="#cccc99">56</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.Missed</td>
+<td BGCOLOR="#cccc99">0</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.ContinuousMissed</td>
+<td BGCOLOR="#cccc99">0</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.PassCount</td>
+<td BGCOLOR="#cccc99">0</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.FailCount</td>
+<td BGCOLOR="#cccc99">56</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.RecyleCount</td>
+<td BGCOLOR="#cccc99">0</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.ContinuousPassCount</td>
+<td BGCOLOR="#cccc99">0</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.ContinuousFailCount</td>
+<td BGCOLOR="#cccc99">56</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.GPI</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to General Purpose Input</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.GPI.0</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to General Purpose Input Offset 0x0</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.GPI.1</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to General Purpose Input Offset 0x1</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.GPI.2</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to General Purpose Input Offset 0x2</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.GPO</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to General Purpose Output</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.GPO.0</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to General Purpose Output Offset 0x0</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.GPO.1</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to General Purpose Output Offset 0x1</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Global.GPO.2</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to General Purpose Output Offset 0x2</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Result</td>
+<td BGCOLOR="#cccc99">Rejected</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Result.0</td>
+<td BGCOLOR="#cccc99">3</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">COM3</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to Com port on COM3 Baud:38400</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Prog</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">TcpP5025</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"> Attached to Server on port 5025</td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">ResultString</td>
+<td BGCOLOR="#cccc99">2D code = [2-D-Code%d][13][10]</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Readbuffer</td>
+<td BGCOLOR="#cccc99">0</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">x</td>
+<td BGCOLOR="#cccc99">2983</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">fn</td>
+<td BGCOLOR="#cccc99">ftp://169.254.121.69/img2983.bmp</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">CommandString</td>
+<td BGCOLOR="#cccc99">T2 </td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">Counter</td>
+<td BGCOLOR="#cccc99">31</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">CommandCharacter</td>
+<td BGCOLOR="#cccc99">T</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">TcpP5021</td>
+<td BGCOLOR="#cccc99"></td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">B2d</td>
+<td BGCOLOR="#cccc99">?</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+<tr>
+<td BGCOLOR="#cccc99">B2d.Result</td>
+<td BGCOLOR="#cccc99">Undefined</td>
+<td BGCOLOR="#cccc99"></td>
+</tr>
+</table>
+</center></div>
+
+<p>
+</p>
+</body>
+</html>

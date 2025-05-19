@@ -1,0 +1,52 @@
+{
+    "SETTINGS":{
+        "ENBL_WEB_CMR": false,
+        "ENBL_IND_CMR": true,
+        "WEB_CMR_REDUNTANT_IMAGES":3,
+        "IND_CMR_REDUNTATNT_IMAGES":3,
+        "LIGHT_JOBS":[{"id":1,"brightness":0, "temperature":3000},
+                    {"id":2,"brightness":30, "temperature":3000},
+                    {"id":3,"brightness":60, "temperature":3000}],
+        "WEB_CMR_ID":2,
+        "IND_CMR_ID":1,
+        "STR_BSE_PATH":"C:\\Your filepath to image folders"
+    },
+
+    "DATABASE":{
+    "CONNECTIONSTRING":"LAPTOP\\SQLEXPRESS",
+    "DBNAME":"BCHLR25",
+    "USRNM":"plsadmin",
+    "PSWRD":"123456",
+    "DB_TABLE_NAME": "IMAGE_DATA"
+    },
+
+    "INDCMR":{
+        "IND_CMR_ADDR":"169.254.35.35",
+        "IND_CMR_PRT_SND":5024,
+        "IND_CMR_PRT_RCV":5025,
+        "IND_CMR_TIMEOUT": 10,
+        "IND_CMR_BASE_PTH":"C:\\Your filepath to FTP server"
+    },
+
+    "WEBCMR":{
+        "CAP_INDX":0
+    },
+
+    "FTPSERVER":{
+        "ADDR":"0.0.0.0",
+        "BASE_PATH_FTP":"C:\\Your filepath to FTP server",
+        "USRNM_FTP":"plsadmin",
+        "PSWRD_FTP":"123456"
+    },
+
+    "LIGHTBULBS":{
+        "BLB1_ADDR":"192.168.137.8",
+        "BLB2_ADDR":"192.168.137.9"
+    },
+
+    "PROCEDURES":{
+        "CHCK_TESTID":"udpCheckTestId",
+        "DLT_TESTID":"udpDeleteRecord"
+    }
+}
+
