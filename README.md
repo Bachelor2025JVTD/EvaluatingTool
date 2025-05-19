@@ -51,7 +51,7 @@ Connect to the local web-API to configure the lightbulbs.
 
 ### Software configuration
 #### Folderstructure
-The give folderstructure must be implemented with correct syntax to be able to save the images.
+The given folderstructure must be implemented with correct syntax to be able to save images.
 
 ```bash
 
