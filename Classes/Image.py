@@ -23,14 +23,6 @@ class Image:
             return cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
         else:
             raise ValueError("Error: Image is already greyscaled!") 
-
-    @staticmethod
-    def IsGreyscaled(image:np.ndarray)->bool:
-        '''Check if image is correct dimentional'''
-        Image.Check(image)
-        if len(image.shape)>2:
-            return False
-        return True
     
     @staticmethod
     def __IsImage(image:np.ndarray)->bool:
@@ -50,13 +42,6 @@ class Image:
         img = cv2.equalizeHist(img)  #Create better contrast
         usedTreshold, img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU) #Filtrate image to be black and white pixels only
         return img, usedTreshold
-
-    @staticmethod
-    def Sharpness(image:np.ndarray)->float:
-        """Returns sharpness and normalized sharpness"""
-        Image.Check(image)
-        sharpness=float(np.var(cv2.Laplacian(image,cv2.CV_64F)))
-        return sharpness
     
     @staticmethod
     def NormalizedSharpness(image:np.ndarray)->float:
@@ -78,63 +63,12 @@ class Image:
         darkestPixels=sortedImage[:nbrElements]
         brightestPixels=sortedImage[-nbrElements:]
         return float(np.average(brightestPixels)-np.average(darkestPixels))
-
-    @staticmethod
-    def Brightness(image:np.ndarray)->tuple[float,float,float]:
-        """Returns minimum brightness, maximum brightness and average brightness"""
-        Image.Check(image)
-        return Image.LoBrightness(image),Image.HiBrightness(image), Image.AvgBrightness(image)
-    
-    @staticmethod
-    def LoBrightness(image:np.ndarray)->float:
-        '''Returns lowest pixel value in image'''
-        Image.Check(image)
-        return np.min(image)
-    @staticmethod
-    def HiBrightness(image:np.ndarray)->float:
-        '''Returns highest pixel value in iamge'''
-        Image.Check(image)
-        return np.max(image)
     
     @staticmethod
     def AvgBrightness(image:np.ndarray)->float:
         '''Returns average pixel value in image'''
         Image.Check(image)
         return np.average(image)
-
-    @staticmethod
-    def QuitZoneContrast(image:np.ndarray, zoneWidth:int=20)->float:
-        '''Returns contrast of quitzone'''
-        Image.Check(image)
-        h,w=image.shape
-
-        if zoneWidth<=0 or zoneWidth>w or zoneWidth>h:
-            raise ValueError("Error: Parameter zoneWidth must be greater than zero and equal or less than the image size! ")
-        return float(Image.Contrast(image[0:h,0:zoneWidth])+Image.Contrast(image[0:h,w-zoneWidth:w])+Image.Contrast(image[0:zoneWidth,0:w])+Image.Contrast(image[h-zoneWidth:h,0:w]))/4.0
-    
-    @staticmethod
-    def QuitZoneBrightness(image:np.ndarray,zoneWidth:int=20)->float:
-        '''Returns brightness of quetizone'''
-        Image.Check(image)
-        h,w=image.shape
-
-        if zoneWidth<=0 or zoneWidth>w or zoneWidth>h:
-            raise ValueError("Error: Parameter zoneWidth must be greater than zero and equal or less than the image size! ")
-
-        return float(Image.AvgBrightness(image[0:h,0:zoneWidth])+Image.AvgBrightness(image[0:h,w-zoneWidth:w])
-                +Image.AvgBrightness(image[0:zoneWidth,0:w])+Image.AvgBrightness(image[h-zoneWidth:h,0:w]))/4.0
-
-    @staticmethod
-    def RMS(image:np.ndarray)->float:
-        '''Returns RMS-value of image'''
-        Image.Check(image)
-        return np.sqrt(np.mean(np.square(image)))
-    
-    @staticmethod
-    def StandardDeviation(image:np.ndarray)->float:
-        '''Returns standard deviation of image'''
-        Image.Check(image)
-        return np.std(image)
 
     @staticmethod
     def BrightnessVarians(image:np.ndarray)->float:

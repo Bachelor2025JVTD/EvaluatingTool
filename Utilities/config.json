@@ -1,6 +1,6 @@
 {
     "SETTINGS":{
-        "ENBL_WEB_CMR": false,
+        "ENBL_WEB_CMR": true,
         "ENBL_IND_CMR": true,
         "WEB_CMR_REDUNTANT_IMAGES":3,
         "IND_CMR_REDUNTATNT_IMAGES":3,

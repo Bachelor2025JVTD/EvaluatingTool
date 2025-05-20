@@ -6,7 +6,7 @@ from pyftpdlib.servers import FTPServer
 
 class FtpServer():
     def __init__(self,storePath:str, username:str=None,password:str=None)->"FtpServer":
-
+        """Controls arguments and generates an object to manage FTP-server"""
         if type(storePath)!=str:
             raise ValueError("Error: Parameter 'storePath' must be of datatype string!")
         elif type(username)!=str and username is not None:

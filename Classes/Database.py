@@ -4,7 +4,7 @@ class Database:
     """
     Database class to execute queries with MSSQL-databases. Defoult connection is already configured!
     """
-    def __init__(self, serverName:str="LAPTOP\SQLEXPRESS", databaseName:str="BCHLR2025", username:str="plsadmin", password:str="123456")->"Database":
+    def __init__(self, serverName:str, databaseName:str, username:str, password:str)->"Database":
         '''Creates an class of Database'''
         self.servername=serverName
         self.databasename=databaseName
